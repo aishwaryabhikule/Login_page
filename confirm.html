@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verification</title>
+    <style>
+        *{
+            font-size: 25px;
+        }
+        body{
+            
+            background: url(./background.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            align-items: center;
+            border: 0;
+            margin: 70px;
+            padding: 30px;
+        }
+        p{
+            border: 2px solid ;
+            border-radius: 2rem;
+            margin: 10em;
+            padding: 35px;
+        }
+        b{
+            font-size: 1em;
+        }
+        #btn{
+            border: 0;
+            background:  #101010;
+            color: whitesmoke;
+            border-radius: 4rem;
+            width: 5rem;
+            padding: 10px;
+            margin-left: auto; 
+            margin-top: 5px; 
+            cursor: pointer;  
+        }
+        #btn:hover{
+            background-color: darkgray;
+            color: #101010;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <b>Dear</b> <Strong><span id="firstname"></strong></b>,
+        <br>
+            Thank you for your inquiry. A 4 digit verification number has been sent to your email: <Strong><span id="emailvalid"></strong></b><br>
+            Please enter it in the following box and submit for confirmation<br><br>
+            <label id="otpLabel">OTP:</label>
+            <input type="text" name="otp" id="otpvalid"> 
+            <input id="btn" type="button" value="Validate" onclick="validateOTP()">
+    </p>
+
+<script>
+        
+    document.getElementById("firstname").innerHTML = sessionStorage.getItem('fname').split(' ')[0]; 
+    document.getElementById("emailvalid").innerHTML = sessionStorage.getItem('email');
+
+
+    
+    
+
+    let OTP = '';
+    let counter = 0;
+// Function to generate OTP
+function generateOTP() {
+            
+      // Declare a digits variable 
+      // which stores all digits
+
+    var digits = '0123456789';
+   
+    for (let i = 0; i < 4; i++ ) {
+          OTP += digits[Math.floor(Math.random() * 10)];
+    }
+    return OTP;
+   
+}
+    
+console.log("OTP of 4 digits: ")
+console.log( generateOTP() );
+
+
+function validateOTP(){
+
+    var valid = document.getElementById("otpvalid").value;
+
+    if(valid == OTP){
+        document.write("Validation Successful!");
+        window.location = 'http://pixel6.co/';
+    }
+    else{
+        document.getElementById("otpLabel").innerHTML = 'Re-Enter OTP';
+        document.getElementById("otpvalid").value = '';
+        counter++;
+        if(counter==3){
+            document.write("Validation Failed!");
+            window.location = 'http://pixel6.co/ui';
+        }
+    
+    }
+     
+}
+   
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form name="myform" action="confirm.html" onsubmit="return validation()">
+        <div class="container">
+            <h2>Loan Application</h2>
+                    <label for="">Full Name:</label><br>
+                    <input type="text" name="username" id="fname" minlength="4" required><br>
+                    <span id="error"></span><br>
+                    <label for="">Email:</label><br>
+                    <input type="text" name="email" id="email"><br>
+                    <span id="error1"></span><br>
+                    <label for="">PAN Card:</label><br>
+                    <input name="PANNumber" type="text" id="PANNumber" class="PAN" /><br>
+                    <span id="PANCard" class="error">Invalid PAN Number</span><br>
+            
+                    <label for="">Loan Amount:</label><br>
+                    <input type="text" name="amount" id="amount" placeholder="Enter amount..." pattern="[1-9]{1}[0-9]{8}"><br>
+                    <br>
+                    <label for="">Rate(Interest):%</label><br>
+                    <input step=".1" id="rate" placeholder="Enter rate..."><br>
+                    <br>
+                    <label for="">Month(Time):</label><br>
+                    <input type="number" id="time" placeholder="Enter time period..."><br>
+                    <br>
+                    
+                    <p style="font-weight: 600;"><input type="button" value="Calulate" id="calculate_emi" onclick="calculate()">&nbsp;&nbsp;&nbsp;&nbsp;Estimated EMI:
+                        <span id="output"></span>
+                    </p>
+                    <input type="submit" value="Submit" id="btn"><br>       
+        </div>
+    </form>
+<script src="script.js"></script>
+</body>
+</html>

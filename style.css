@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+*{
+    margin: 0;
+}
+
+h2{
+    margin-top: 1px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 900;
+}
+
+
+body{
+    font-family: 'Source sans pro',sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(./background.jpg);
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+form{
+    box-sizing: border-box;
+    border-radius: 1px;   
+}
+
+.container{
+    background-color: rgba(0,0,0,0.5);
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 25px;
+    position: relative;
+    height: 500px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input{
+    width: 50vh;
+}
+
+label{
+    display:contents;
+    width: auto;
+    font-weight: 700;
+}
+
+#btn{
+    border: 0;
+    background:  #101010;
+    color: whitesmoke;
+    border-radius: 4rem;
+    width: 80px;
+    padding: 10px;
+    margin-left: auto; 
+    margin-top: 10px; 
+    cursor: pointer;  
+}
+#btn:hover{
+    background-color: darkgray;
+    color: #101010;
+}
+
+#calculate_emi{
+    border: 0;
+    background: #101010;
+    color: whitesmoke;
+    border-radius: 2rem;
+    width: 80px;
+    padding: 5px;
+    cursor: pointer; 
+    height: 25px; 
+
+}
+
+#calculate_emi:hover{
+    background-color: darkgray;
+    color: #101010;
+}
+
+.PAN
+    {
+        text-transform: uppercase;
+    }
+    .error
+    {
+        color: Red;
+        visibility: hidden;
+    }
