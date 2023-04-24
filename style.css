@@ -32,7 +32,7 @@ form{
 }
 
 .container{
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(248, 240, 240, 0.5);
     max-width: 500px;
     margin: 2rem auto;
     padding: 25px;
@@ -59,8 +59,8 @@ label{
     color: whitesmoke;
     border-radius: 4rem;
     width: 80px;
-    padding: 10px;
-    margin-left: auto; 
+    padding: 0.3em;
+    /* margin-left: auto;  */
     margin-top: 10px; 
     cursor: pointer;  
 }
