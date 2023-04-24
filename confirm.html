@@ -10,12 +10,11 @@
             font-size: 25px;
         }
         body{
-            
             background: url(./background.jpg);
             background-size: 100%;
             background-repeat: no-repeat;
             background-attachment: fixed;
-
+            /* overflow: hidden; */
             align-items: center;
             border: 0;
             margin: 70px;
@@ -24,19 +23,20 @@
         p{
             border: 2px solid ;
             border-radius: 2rem;
-            margin: 10em;
+            margin: 0.3em;
             padding: 35px;
+            align-items: center;
         }
         b{
             font-size: 1em;
         }
         #btn{
-            border: 0;
+            
             background:  #101010;
             color: whitesmoke;
             border-radius: 4rem;
             width: 5rem;
-            padding: 10px;
+            padding: 0.3em;
             margin-left: auto; 
             margin-top: 5px; 
             cursor: pointer;  
@@ -49,12 +49,12 @@
 </head>
 <body>
     <p>
-        <b>Dear</b> <Strong><span id="firstname"></strong></b>,
+        <b>Dear</b> <strong><span id="firstname"></span></strong>,
         <br>
-            Thank you for your inquiry. A 4 digit verification number has been sent to your email: <Strong><span id="emailvalid"></strong></b><br>
+            Thank you for your inquiry. A 4 digit verification number has been sent to your email: <strong><span id="emailvalid"></strong><br>
             Please enter it in the following box and submit for confirmation<br><br>
             <label id="otpLabel">OTP:</label>
-            <input type="text" name="otp" id="otpvalid"> 
+            <input type="text" onkeypress="return event.charCode >=47 && event.charCode <=57" name="otp" id="otpvalid" maxlength="4"> 
             <input id="btn" type="button" value="Validate" onclick="validateOTP()">
     </p>
 
@@ -64,8 +64,6 @@
     document.getElementById("emailvalid").innerHTML = sessionStorage.getItem('email');
 
 
-    
-    
 
     let OTP = '';
     let counter = 0;
@@ -94,15 +92,16 @@ function validateOTP(){
 
     if(valid == OTP){
         document.write("Validation Successful!");
-        window.location = 'http://pixel6.co/';
+       
     }
     else{
         document.getElementById("otpLabel").innerHTML = 'Re-Enter OTP';
-        document.getElementById("otpvalid").value = '';
         counter++;
+        document.getElementById("otpvalid").value = '';
+        
         if(counter==3){
             document.write("Validation Failed!");
-            window.location = 'http://pixel6.co/ui';
+            
         }
     
     }
